@@ -35,4 +35,22 @@ export function attachDogLinks(){
   dogLinks.forEach(dog => ul.append(dog));
 }
 
+function handleEnter(){
+  const ele = document.querySelector('.drop-down-dog-nav');
+  ele.addEventListener('mouseenter', event => {
+    Array.from(document.getElementsByClassName('dog-link')).forEach(el => 
+      el.removeAttribute("style", "display: block"));
+  })
+}
+
+function handleLeave(){
+  const ele = document.querySelector('.drop-down-dog-nav');
+  ele.addEventListener('mouseleave', event => {
+    Array.from(document.getElementsByClassName('dog-link')).forEach(el => el.setAttribute("style", "display: none")); 
+  });
+}
+
+// const h = document.getElementById('some-dogs');
+handleEnter();
+handleLeave();
 attachDogLinks();
